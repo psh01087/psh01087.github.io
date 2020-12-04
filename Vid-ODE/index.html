@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Vid-ODE: Continuous-Time Video Generation with Neural Ordinary Differential Equation</title>
+    <style type="text/css">
+    .center {
+        text-align: center;
+    }
+
+    .lead {
+        font-size: 1.0rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .author {
+        font-size: 1.1rem;
+    }
+
+    .figure-caption {
+        color: #6c757d;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <center>
+                    <h2 style="margin: 20px;">Vid-ODE: Continuous-Time Video Generation <br> with Neural Ordinary Differential Equation</h2>
+                    <h4>AAAI 2021</h4>
+                    <!-- author -->
+                    <div class="row author">
+                        <div class="col-sm-4">
+                            <a href="https://psh01087.github.io/">Sunghyun Park*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="https://www.notion.so/kangyeolk/Kangyeol-Kim-86d81c125e404a98a9527713bd8a355c">Kangyeol Kim*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-4">
+                            Junsoo Lee
+                            <br>
+                            KAIST
+                        </div>
+                    </div>
+                    <div class="row author" style="margin-top:18px;">
+                        <div class="col-sm-3">
+                            <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="http://www.joonseok.net/">Joonseok Lee</a>
+                            <br>
+                            Google Research
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="http://sookyung.net/">Sookyung Kim</a>
+                            <br>
+                            Lawrence Livermore <br> Nat’l Lab.
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://mp2893.com/">Edword Choi</a>
+                            <br>
+                            KAIST
+                        </div>
+                    </div>
+                </center>
+                <!-- Teaser -->
+                <center>
+                    <figure class="figure">
+                        <img src="./figs/teaser_image.png" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+                        <figcaption class="figure-caption text-justify">
+                            Figure: Generating video frames in diverse time intervals based on a 5 FPS video.
+                            (Top row: Input to Vid-ODE. Remaining rows: Videos in various FPS between the start frame and the end frame.)
+                        </figcaption>
+                    </figure>
+                </center>
+                <!-- Abstract -->
+                <hr>
+                <div>
+                    <h3>Abstract</h3>
+                    <p class="lead text-justify">
+                        Video generation models often operate under the assumption of fixed frame rates, which leads to suboptimal performance when it comes to handling flexible frame rates (e.g.,increasing the frame rate of more dynamic portion of the video as well as handling missing video frames). To resolve the restricted nature of existing video generation models’ ability to handle arbitrary timesteps, we propose continuous-time video generation by combining neural ODE (Vid-ODE) with pixel-level video processing techniques. Using ODE-ConvGRU as an encoder, a convolutional version of the recently proposed neural ODE, which enables us to learn continuous-time dynamics, Vid-ODE can learn the spatio-temporal dynamics of input videos of flexible frame rates. The decoder integrates the learned dynamics function to synthesize video frames at any given timesteps, where the pixel-level composition technique is used to maintain the sharpness of individual frames. With extensive experiments on four real-world video datasets, we verify that the proposed Vid-ODE outperforms state-of-the-art approaches under various video generation settings, both within the trained time range (interpolation) and beyond the range (extrapolation). To the best of our knowledge, Vid-ODE is the first work successfully performing continuous-time video generation using real-world videos.
+                    </p>
+                </div>
+                <hr>
+                <div>
+                    <h3>Paper and Supplementary Material</h3>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="./figs/paper.png" class="img-fluid border" alt="" style="margin:20px;">
+                        </div>
+                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
+                            <div class="align-middle">
+                                <a href="https://arxiv.org/abs/2010.08188">[Paper]</a>
+                                <p class="lead">
+                                    AAAI, 2021. <br>
+                                    Sunghyun Park*, Kangyeol Kim*, Junsoo Lee, Jaegul Choo, Joonseok Lee, Sookyung Kim, and Edward Choi.
+                                    "Vid-ODE: Continuous-Time Video Generation with Neural Ordinary Differential Equation"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Method overview</h3>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/model_overview.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Overview of Vid-ODE.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                </div>
+                <hr>
+                <div>
+                    <h3>Additional Results</h3>
+                    <center>
+<!--                        <figure class="figure">-->
+<!--                            <img src="./figs/additional_results_vid_rnn.png" class="figure-img img-fluid" alt="Responsive image">-->
+<!--                            <figcaption class="figure-caption text-justify">-->
+<!--                                <center>-->
+<!--                                    Figure 3: Comparison  between  Vid-ODE  and  Vid-RNN.-->
+<!--                                </center>-->
+<!--                            </figcaption>-->
+<!--                        </figure>-->
+                    </center>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/additional_results_penn_interp.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Qualitative comparisons with interpolation baselines on the Penn Action dataset.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/additional_results_penn_extrap.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Qualitative comparisons with extrapolation baselines on the Penn Action dataset.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/additional_results_hurricane.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Qualitative comparisons with interpolation baselines on the Penn Action dataset.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/additional_results_mgif_continuous.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Generated video frames in diverse time intervals based on a 5-FPS input video with the Moving GIF dataset.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
