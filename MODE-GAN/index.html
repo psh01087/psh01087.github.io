@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Continuous-Time Video Generation viaLearning Motion Dynamics with Neural ODE</title>
+    <style type="text/css">
+    .center {
+        text-align: center;
+    }
+
+    .lead {
+        font-size: 1.0rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .author {
+        font-size: 1.1rem;
+    }
+
+    .figure-caption {
+        color: #6c757d;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <center>
+                    <h2 style="margin: 20px;">Continuous-Time Video Generation via <br> Learning Motion Dynamics with Neural ODE</h2>
+                    <h4>Under Review</h4>
+                    <!-- author -->
+                    <div class="row author">
+                        <div class="col-sm-4">
+                            <a href="https://www.notion.so/kangyeolk/Kangyeol-Kim-86d81c125e404a98a9527713bd8a355c">Kangyeol Kim*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="https://psh01087.github.io/">Sunghyun Park*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="https://ssuhan.github.io/">Junsoo Lee</a>
+                            <br>
+                            KAIST
+                        </div>
+                    </div>
+                    <div class="row author" style="margin-top:18px;">
+                        <div class="col-sm-3">
+                            <a href="http://www.joonseok.net/">Joonseok Lee</a>
+                            <br>
+                            Google Research
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="http://sookyung.net/">Sookyung Kim</a>
+                            <br>
+                            Lawrence Livermore <br> Nat’l Lab.
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://mp2893.com/">Edword Choi</a>
+                            <br>
+                            KAIST
+                        </div>
+                    </div>
+                </center>
+                <!-- Teaser -->
+                <center>
+                    <figure class="figure">
+                        <img src="./figs/teaser_image.png" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+                        <figcaption class="figure-caption text-justify">
+                            Figure: A walking human and a corresponding key-points.
+                            Rigid treatment of time as discretized, fixed-interval timesteps (the first and last steps) prevents the model from
+                            learning the true underlying motion dynamics by missing out frames at unseen timesteps (motion in the box).
+                        </figcaption>
+                    </figure>
+                </center>
+                <!-- Abstract -->
+                <hr>
+                <div>
+                    <h3>Abstract</h3>
+                    <p class="lead text-justify">
+                        In order to perform unconditional video generation, we must learn the distribution of the real-world videos.
+                        In an effort to synthesize high-quality videos, various studies attempted to learn a mapping function between noise and videos, including recent efforts to separate motion distribution and appearance distribution. Previous methods, however, learn motion dynamics in discretized, fixed-interval timesteps, which is contrary to the continuous nature of motion of a physical body.
+                        In this paper, we propose a novel video generation approach that learns separate distributions for motion and appearance, the former modeled by neural ODE to learn natural motion dynamics.
+                        Specifically, we employ a two-stage approach where the first stage converts a noise vector to a sequence of keypoints in arbitrary frame rates, and the second stage synthesizes videos based on the given keypoints sequence and the appearance noise vector.
+                        Our model not only quantitatively outperforms recent baselines for video generation in both fixed and vary-ing frame rates, but also demonstrates versatile functionality such as dynamic frame rate manipulation and motion transfer between two datasets, thus opening new doors to diverse video generation applications.
+                    </p>
+                </div>
+                <hr>
+<!--                <div>-->
+<!--                    <h3>Paper and Supplementary Material</h3>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-sm-3">-->
+<!--                            <img src="./figs/paper.png" class="img-fluid border" alt="" style="margin:20px;">-->
+<!--                        </div>-->
+<!--                        <div class="col" style="margin-top: auto; margin-bottom: auto;">-->
+<!--                            <div class="align-middle">-->
+<!--                                <a href="">[Paper]</a>-->
+<!--                                <p class="lead">-->
+<!--                                    Under Review. <br>-->
+<!--                                    Kangyeol Kim*, Sunghyun Park*, Junsoo Lee, Joonseok Lee, Sookyung Kim, Jaegul Choo, and Edward Choi.-->
+<!--                                    "Continuous-Time Video Generation via Learning Motion Dynamics with Neural ODE"-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <hr>-->
+                <div>
+                    <h3>Method overview</h3>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/model_overview1.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Overview of Stage I.
+                                </center>
+                            </figcaption>
+                        </figure>
+                        <figure class="figure">
+                            <img src="./figs/model_overview2.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Overview of Stage II.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                </div>
+                <hr>
+                <div>
+                    <h3>Additional Results</h3>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/additional_results_penn_interp.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Qualitative comparisons with interpolation baselines on the Penn Action dataset.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
