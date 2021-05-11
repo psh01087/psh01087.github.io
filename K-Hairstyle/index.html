@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>K-Hairstyle: A Large-scale Korean hairstyle dataset for virtual hair editing and hairstyle classification</title>
+    <style type="text/css">
+    .center {
+        text-align: center;
+    }
+
+    .lead {
+        font-size: 1.0rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .author {
+        font-size: 1.1rem;
+    }
+
+    .figure-caption {
+        color: #6c757d;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-9">
+                <center>
+                    <h2 style="margin: 20px;">K-Hairstyle: A Large-scale Korean hairstyle dataset for virtual hair editing and hairstyle classification</h2>
+                    <h4>Under Review</h4>
+                    <!-- author -->
+                    <div class="row author">
+                        <div class="col-sm-3">
+                            <a href="">Taewoo Kim*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="">Chaeyeon Chung*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://psh01087.github.io/">Sunghyun Park*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="">Gyojung Gu</a>
+                            <br>
+                            Nestyle
+                        </div>
+                    </div>
+                    <div class="row author" style="margin-top:18px;">
+                        <div class="col-sm-3">
+                            <a href="">Keonmin Nam</a>
+                            <br>
+                            Nestyle
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="">Wonzo Choe</a>
+                            <br>
+                            Smilegate AI
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="">Jaesung Lee</a>
+                            <br>
+                            Aiinplanet
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>
+                            <br>
+                            KAIST
+                        </div>
+                    </div>
+                </center>
+                <hr>
+                <div>
+                    <center>
+                    <figure class="figure">
+                        <img src="./figs/teaser_image.png" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+                    </figure>                
+                    </center>
+                </div>
+                <!-- Abstract -->
+                <div>
+                    <h3>Abstract</h3>
+                    <p class="text-justify">
+                        The hair and beauty industry is one of the fastest growing industries. 
+                        This led to the development of various applications, such as virtual hair dyeing or hairstyle translations, to satisfy the need of the customers. 
+                        Although there are several public hair datasets available for these applications, they consist of limited number of images with low resolution, 
+                        which restrict their performance on high-quality hair editing. Therefore, we introduce a novel large-scale Korean hairstyle dataset, K-hairstyle, 256,679 with high-resolution images. 
+                        In addition, K-hairstyle contains various hair attributes annotated by Korean expert hair stylists and hair segmentation masks.
+                    </p>
+                </div>
+                <hr>
+                <!-- Details -->
+                <div>
+                    <h3>Details</h3>
+                    <p class="text-justify">
+                        K-hairstyle consists of 256,679 high-resolution images with useful annotations, such as hair masks and attributes.
+                        <ul>
+                            <li><b>High-resolution Image.</b> The images are collected using high-end cameras and the resolution of the images is 4032×3024</li>
+                            <li><b>Large-scale Dataset.</b> We collect about 256,679 images, much more than the existing hair datasets.</li>
+                            <li><b>Multi-view.</b> We provide the multi-view images for each person. It contains 20 to 120 multi-view images per person.</li>
+                            <li><b>Hair Segmentation Mask.</b> The hair regions of the images are manually labeled in a polygon format.</li>
+                            <li><b>Hair Attributes.</b> Various hair attributes are annotated by Korean expert hair stylists. Hairstyles are categorized into 31 types, and other attributes, such as hair color, length, and curl, are also labeled.</li>
+                            <li><b>Face Blur.</b> Due to the privacy issues, the face is blurred.</li>
+                        </ul>
+                    </p>
+                </div>
+                <!-- Downloads -->
+                <div>
+                    <h3>Downloads</h3>
+                    <p class="text-justify">
+                        We will release K-hairstyle dataset soon.
+                    </p>
+                    <!-- <div class="col-sm-2">
+                        <a href=""><img src="./figs/download_icon.png" class="figure-img img-fluid" alt="" style="margin:20px;"></a>
+                    </div> -->
+                </div>
+                <hr>
+                <div>
+                    <h3>Paper and Supplementary Material</h3>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="./figs/paper.png" class="img-fluid border" alt="" style="margin:20px;">
+                        </div>
+                        <div class="col" style="margin-top: auto; margin-bottom: auto;">
+                            <div class="align-middle">
+                                <a href="https://arxiv.org/abs/2102.06288">[Paper]</a>
+                                <p class="lead">
+                                    Under review. <br>
+                                    Taewoo Kim*, Chaeyeon Chung*, Sunghyun Park*, Gyojung Gu, Keonmin Nam, Wonzo Choe, Jaesung Lee, Jaegul Choo. <br>
+                                    "K-Hairstyle: A Large-scale Korean hairstyle dataset for virtual hair editing and hairstyle classification"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
