@@ -123,10 +123,10 @@
                     <h3>Details</h3>
                     <p class="text-justify">
                         K-hairstyle includes 11 hairstyle-related annotations and 9 additional annotations including segmentation masks.
-                        The annotations are split into two files, 'annotations.csv' and 'annotations_mask.csv'.
-                        'annotations.csv' includes hairstyle-related annotations and additional annotations except segmentation masks.
-                        'annotations_mask.csv' contains segmentation masks of hair and blurred face in the form of polygon coordinates.
-                        Each data instance has unique ‘id’, 'path', and 'source'.
+                        The annotations are split into two files, <b>'annotations.csv'</b> and <b>'annotations_mask.csv'</b>.
+                        <b>'annotations.csv'</b> includes hairstyle-related annotations and additional annotations except segmentation masks.
+                        <b>'annotations_mask.csv'</b> contains segmentation masks of hair and blurred face in the form of polygon coordinates.
+                        Each image has unique ‘id’, 'path', and 'source'.
                         Note that the annotation files are for 'mqset'. The annotations for 'hqset' and 'rawset' can be 
                         
                         The details of 11 hairstyle-related annotations are as follows:
@@ -144,16 +144,36 @@
                             <li><b>Before-after.</b></li>
                         </ul>
                     
-                        The details of 9 additional annotations including segmentation masks are as follows:
+                        The details of 12 additional annotations including segmentation masks are as follows:
                         <ul>
-                            <li>Camera angle. <b>Front</b>, <b>horizontal</b>, <b>vertical</b> </li>
-                            <li>Demographic information. <b>Age</b>, <b>gender</b></li>
-                            <li>Segmentation masks. <b>Hair</b>, <b>Blurred face</b></li>
-                            <li>Image <b>height</b> and <b>width</b></li>
+                            <li><b>Id.</b></li>
+                            <li><b>Path.</b></li>
+                            <li><b>Source.</b> identity </li>
+                            <li><b>Age.</b></li>
+                            <li><b>Gender.</b></li>
+                            <li><b>Height.</b> of each image.</li>
+                            <li><b>Width.</b> of each image.</li>
+                            <li><b>Front.</b></li>
+                            <li><b>Horizontal.</b></li>
+                            <li><b>Vertical.</b> </li>
+                            <li><b>Hair mask.</b></li>
+                            <li><b>Face mask.</b></li>                            
                         </ul>
                         
                     </p>
                 </div>
+                <div>
+                    <h3>multi-view</h3>
+                    <p class="text-justify">
+                        The examples of multi-view image are as follows: (photo will be changed soon)
+                    </p>
+                    <center>
+                    <figure class="figure">
+                        <img src="./figs/teaser_image.png" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+                    </figure>                
+                    </center>
+                </div>
+        
                 <!-- Downloads -->
                 <div>
                     <h3>Downloads</h3>
