@@ -103,9 +103,9 @@
                     </p>
                 </div>
                 <hr>
-                <!-- Details -->
+                <!-- Overview -->
                 <div>
-                    <h3>Details</h3>
+                    <h3>Overview</h3>
                     <p class="text-justify">
                         K-hairstyle provides 500,000 high-resolution images with a rich set of annotations, such as hairstyle classes, hair segmentation masks, and various attributes.
                         <ul>
@@ -116,6 +116,42 @@
                             <li><b>Hairstyle attributes.</b> Various hairstyle-related attributes are annotated by Korean expert hairstylists. In detail, different hairstyles are categorized into 31 types, and 63 additional attributes, such as hair color, length, and curl, are also labeled.</li>
                             <li><b>Blurred face.</b> Due to the privacy issue, we made the facial region blurry.</li>
                         </ul>
+                    </p>
+                </div>
+                <!-- Details -->
+                <div>
+                    <h3>Details</h3>
+                    <p class="text-justify">
+                        K-hairstyle includes 11 hairstyle-related annotations and 9 additional annotations including segmentation masks.
+                        The annotations are split into two files, 'annotations.csv' and 'annotations_mask.csv'.
+                        'annotations.csv' includes hairstyle-related annotations and additional annotations except segmentation masks.
+                        'annotations_mask.csv' contains segmentation masks of hair and blurred face in the form of polygon coordinates.
+                        Each data instance has unique ‘id’, 'path', and 'source'.
+                        Note that the annotation files are for 'mqset'. The annotations for 'hqset' and 'rawset' can be 
+                        
+                        The details of 11 hairstyle-related annotations are as follows:
+                        <ul>
+                            <li><b>Basestyle.</b></li>
+                            <li><b>Basestyle-type.</b></li>
+                            <li><b>Length.</b></li>
+                            <li><b>Curl.</b></li>
+                            <li><b>Bang.</b></li>
+                            <li><b>Hair loss.</b></li>
+                            <li><b>Side.</b></li>
+                            <li><b>Color.</b></li>
+                            <li><b>Exceptional.</b></li>
+                            <li><b>Rgb.</b></li>
+                            <li><b>Before-after.</b></li>
+                        </ul>
+                    
+                        The details of 9 additional annotations including segmentation masks are as follows:
+                        <ul>
+                            <li>Camera angle. <b>Front</b>, <b>horizontal</b>, <b>vertical</b> </li>
+                            <li>Demographic information. <b>Age</b>, <b>gender</b></li>
+                            <li>Segmentation masks. <b>Hair</b>, <b>Blurred face</b></li>
+                            <li>Image <b>height</b> and <b>width</b></li>
+                        </ul>
+                        
                     </p>
                 </div>
                 <!-- Downloads -->
