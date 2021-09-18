@@ -94,11 +94,12 @@
                 <div>
                     <h3>Abstract</h3>
                     <p class="text-justify">
-                        The hair and beauty industry is one of the fastest growing industries. 
-                        This led to the development of various applications, such as virtual hair dyeing or hairstyle translations, to satisfy the need of the customers. 
-                        Although there are several public hair datasets available for these applications, they consist of limited number of images with low resolution, 
-                        which restrict their performance on high-quality hair editing. Therefore, we introduce a novel large-scale Korean hairstyle dataset, K-hairstyle, 256,679 with high-resolution images. 
-                        In addition, K-hairstyle contains various hair attributes annotated by Korean expert hair stylists and hair segmentation masks.
+                        The hair and beauty industry is a fast-growing industry.
+                        This led to the development of various applications, such as virtual hair dyeing or hairstyle translations, to satisfy the customer needs.
+                        Although several hairstyle datasets are available for these applications, they often consist of a relatively small number of images with low resolution, thus limiting their performance on high-quality hair editing.
+                        In response, we introduce a novel large-scale Korean hairstyle dataset, Khairstyle, containing 500,000 high-resolution images.
+                        In addition, K-hairstyle includes various hair attributes annotated by Korean expert hairstylists as well as hair segmentation masks.
+                        We validate the effectiveness of our dataset via several applications, such as hair dyeing, hairstyle translation, and hairstyle classification.
                     </p>
                 </div>
                 <hr>
@@ -106,14 +107,14 @@
                 <div>
                     <h3>Details</h3>
                     <p class="text-justify">
-                        K-hairstyle consists of 256,679 high-resolution images with useful annotations, such as hair masks and attributes.
+                        K-hairstyle provides 500,000 high-resolution images with a rich set of annotations, such as hairstyle classes, hair segmentation masks, and various attributes.
                         <ul>
-                            <li><b>High-resolution Image.</b> The images are collected using high-end cameras and the resolution of the images is 4032×3024</li>
-                            <li><b>Large-scale Dataset.</b> We collect about 256,679 images, much more than the existing hair datasets.</li>
-                            <li><b>Multi-view.</b> We provide the multi-view images for each person. It contains 20 to 120 multi-view images per person.</li>
-                            <li><b>Hair Segmentation Mask.</b> The hair regions of the images are manually labeled in a polygon format.</li>
-                            <li><b>Hair Attributes.</b> Various hair attributes are annotated by Korean expert hair stylists. Hairstyles are categorized into 31 types, and other attributes, such as hair color, length, and curl, are also labeled.</li>
-                            <li><b>Face Blur.</b> Due to the privacy issues, the face is blurred.</li>
+                            <li><b>High-resolution image.</b> The images with a maximum resolution of 4032×3024 are collected using high-end cameras.</li>
+                            <li><b>Large-scale dataset.</b> We provide 500,000 images, more than any other existing hairstyle datasets.</li>
+                            <li><b>Multi-view image.</b> The dataset contains multi-view images that are captured from various camera angles for each person. The angles include 2 different vertical camera angles and about 10 to 60 different horizontal angles.</li>
+                            <li><b>Segmentation mask.</b> The hair regions of images are manually labeled in the form of a polygon. The blurred face regions are also labeled in the same way.</li>
+                            <li><b>Hairstyle attributes.</b> Various hairstyle-related attributes are annotated by Korean expert hairstylists. In detail, different hairstyles are categorized into 31 types, and 63 additional attributes, such as hair color, length, and curl, are also labeled.</li>
+                            <li><b>Blurred face.</b> Due to the privacy issue, we made the facial region blurry.</li>
                         </ul>
                     </p>
                 </div>
