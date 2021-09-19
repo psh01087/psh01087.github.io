@@ -118,40 +118,40 @@
                         </ul>
                     </p>
                 </div>
-                <!-- Details -->
+                <!-- Annotations -->
                 <div>
-                    <h3>Details</h3>
+                    <h3>Annotations</h3>
                     <p class="text-justify">
                         K-hairstyle includes 11 hairstyle-related annotations and 9 additional annotations including segmentation masks.                        
                         The details of 11 hairstyle-related annotations are as follows:
                         <ul>
-                            <li><b>Basestyle.</b></li>
-                            <li><b>Basestyle-type.</b></li>
-                            <li><b>Length.</b></li>
-                            <li><b>Curl.</b></li>
-                            <li><b>Bang.</b></li>
-                            <li><b>Hair loss.</b></li>
-                            <li><b>Side.</b></li>
-                            <li><b>Color.</b></li>
-                            <li><b>Exceptional.</b></li>
-                            <li><b>Rgb.</b></li>
-                            <li><b>Before-after.</b></li>
+                            <li><b>Basestyle</b>: type of hairstyles, categorical data</li>
+                            <li><b>Basestyle-type</b>: type of hair length, categorical data</li>
+                            <li><b>Length</b>: detailed type of hair length, categorical data</li>
+                            <li><b>Curl</b>: type of curl, categorical data</li>
+                            <li><b>Bang</b>: type of bangs, categorical data</li>
+                            <li><b>Hair loss</b>: degree of hair loss, categorical data</li>
+                            <li><b>Side</b>: type of side hair, categorical data</li>
+                            <li><b>Color</b>: type of hair color, categorical data</li>
+                            <li><b>Exceptional</b>: type of exceptional hairstyle, categorical data</li>
+                            <li><b>Rgb</b>: mean rgb value of hair region based on its hair segmentation mask, 3-dim array of float</li>
+                            <li><b>Before-after</b>: whether a photo is taken before styling or after hairstyling, categorical data</li>
                         </ul>
                     
                         The details of 12 additional annotations including segmentation masks are as follows:
                         <ul>
-                            <li><b>Id.</b></li>
-                            <li><b>Path.</b></li>
-                            <li><b>Source.</b> identity </li>
-                            <li><b>Age.</b></li>
-                            <li><b>Gender.</b></li>
-                            <li><b>Height.</b> of each image.</li>
-                            <li><b>Width.</b> of each image.</li>
-                            <li><b>Front.</b></li>
-                            <li><b>Horizontal.</b></li>
-                            <li><b>Vertical.</b> </li>
-                            <li><b>Hair mask.</b></li>
-                            <li><b>Face mask.</b></li>                            
+                            <li><b>Id</b>: unique id for each image, categorical data</li>
+                            <li><b>Path</b>: path of an image, string data</li>
+                            <li><b>Source</b>: identity of an image (not unique for each image since we have multiple images for each identity), categorical data</li>
+                            <li><b>Age</b>: age of a person in an image, int data</li>
+                            <li><b>Gender</b>: gender of a person in an image, categorical data</li>
+                            <li><b>Height</b>: image height, int data</li>
+                            <li><b>Width</b>: image width, int data</li>
+                            <li><b>Front</b>: whether the image is facing the front, boolean data</li>
+                            <li><b>Horizontal</b>: horizontal camera angle which ranges from 0 (the front) to 360, int data</li>
+                            <li><b>Vertical.</b>: vertical camera angle, categorical data</li>
+                            <li><b>Hair mask</b>: polygon coordinates of hair segmentation mask, string data</li>
+                            <li><b>Face mask</b>: polygon coordinates of blurred face segmentation mask, string data</li>                            
                         </ul>
                     
                         The examples of multi-view image are as follows:
@@ -162,14 +162,13 @@
                         </center>
                     </p>
                 </div>
-        
                 <!-- Downloads -->
                 <div>
                     <h3>Downloads</h3>
                     <p class="text-justify">
                         We will release K-hairstyle dataset soon.
                         We provide <b>'rawset'</b>, <b>'hqset'</b>, and <b>'mqset'</b>.
-                        Note that the annotation files are for 'mqset'. The annotations for 'hqset' and 'rawset' can be 
+                        Note that the annotation files are for 'mqset'. The annotations for 'hqset' and 'rawset' can be obtained ~
                         The annotations are split into two files, <b>'annotations.csv'</b> and <b>'annotations_mask.csv'</b>.
                         <b>'annotations.csv'</b> includes hairstyle-related annotations and additional annotations except segmentation masks.
                         <b>'annotations_mask.csv'</b> contains segmentation masks of hair and blurred face in the form of polygon coordinates.
