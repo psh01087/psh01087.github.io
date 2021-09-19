@@ -126,11 +126,11 @@
                         The details of 11 hairstyle-related annotations are as follows:
                         <ul>
                             <li><b>Basestyle</b>: type of hairstyles, categorical data.</li>
-                            <li><b>Basestyle-type</b>: type of hair length, categorical data.</li>
+                            <li><b>Basestyle_type</b>: type of hair length, categorical data.</li>
                             <li><b>Length</b>: detailed type of hair length, categorical data.</li>
                             <li><b>Curl</b>: type of curl, categorical data.</li>
                             <li><b>Bang</b>: type of bangs, categorical data.</li>
-                            <li><b>Hair loss</b>: degree of hair loss, categorical data.</li>
+                            <li><b>Loss</b>: degree of hair loss, categorical data.</li>
                             <li><b>Side</b>: type of side hair, categorical data.</li>
                             <li><b>Color</b>: type of hair color, categorical data.</li>
                             <li><b>Exceptional</b>: type of exceptional hairstyle, categorical data.</li>
@@ -166,13 +166,16 @@
                 <div>
                     <h3>Downloads</h3>
                     <p class="text-justify">
-                        We will release K-hairstyle dataset soon.
                         We provide <b>'rawset'</b>, <b>'hqset'</b>, and <b>'mqset'</b>.
                         Note that the annotation files are for 'mqset'. The annotations for 'hqset' and 'rawset' can be obtained ~
-                        The annotations are split into two files, <b>'annotations.csv'</b> and <b>'annotations_mask.csv'</b>.
-                        <b>'annotations.csv'</b> includes hairstyle-related annotations and additional annotations except segmentation masks.
-                        <b>'annotations_mask.csv'</b> contains segmentation masks of hair and blurred face in the form of polygon coordinates.
-
+                        The annotations are split into two files, <b>'annotations.pkl'</b> and <b>'annotations_mask.pkl'</b>.
+                        <b>'annotations.pkl'</b> includes hairstyle-related annotations and additional annotations except segmentation masks.
+                        <b>'annotations_mask.pkl'</b> contains segmentation masks of hair and blurred face in the form of polygon coordinates.
+                        <ul>
+                            <li><b>mqset</b>: <a href="https://drive.google.com/drive/folders/1sKC0FyPW5U15mfcbu_-RMQaR1x29YE4x?usp=sharing">[Download]</a></li>
+                            <li><b>hqset</b>: We will release soon</li>
+                            <li><b>rawset</b>: We will release soon</li>
+                        </ul>
                     </p>
                     <!-- <div class="col-sm-2">
                         <a href=""><img src="./figs/download_icon.png" class="figure-img img-fluid" alt="" style="margin:20px;"></a>
